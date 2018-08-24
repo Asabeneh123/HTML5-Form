@@ -1,3 +1,123 @@
-<h1>Welcome Home</h1>
-<h1>Welcome to Integrify</h1>
-<h1>Welcome to Helsinki</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HTML5 Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *,*::after,*::before {
+            box-sizing: border-box;
+        }
+        form {
+            width:80%;
+            margin: auto;
+            padding:20px;
+        }
+        fieldset{
+            padding:25px;
+        }
+   
+        legend{
+            text-align: center;
+        }
+        input {
+           margin:3px;
+           padding:1px;
+        }
+        input:valid,textarea:valid {
+            outline:none;
+            border:none;
+            border-radius: 2px;
+            box-shadow:0 0 2px 1px rgb(72, 245, 19);
+            background:white;
+        }
+        input:focus:invalid,textarea:focus:invalid{
+            /* border:2px solid red; */
+            outline:none;
+            border:none;
+            border-radius: 2px;
+            box-shadow:0 0 2px 1px red;
+            background:white;
+        }
+        input::placeholder {
+            text-align: center;
+            font-size: 12px;
+            font-weight: lighter;
+            color:#ccc;
+        }
+   
+        [placeholder]:valid {
+            color:green;
+            outline: none;
+
+        }
+        [placeholder]:focus:invalid {
+            color:red;
+        }
+      
+        
+
+    </style>
+   
+ 
+</head>
+<body>
+   
+    <form>
+        <fieldset>
+            <legend>
+                HTML5 Form Validation
+            </legend>
+            <label for="firstname">First Name:</label>
+            <input id="firstname" type="text" name="firstname" placeholder="First name"  required  pattern="[A-Z][a-z]{2,9}"/> <br />
+    
+            <label for="lastname" >Last Name:</label>
+            <input id="lastname" type="text" name="lastname" placeholder="Last name"  required  pattern="[A-Z][a-z]{2,9}"/> <br />
+    
+            <label for="user-value">Enter your age:</label>
+            <input id="user-value" type="number" name="user-value" min="5" max="100" placeholder="Age" required/> <br />
+    
+            <label for="country">Country of origin:</label>
+            <input id="country" type="text" placeholder="Country" pattern ="[Ff]inland|[Ee]stonia|Norway|Sweden" required/> <br />
+            
+            <label>Date of birth:</label>
+            <input type="date" required/>
+            <p>Gender</p>
+            <label for="female">Female</label><input id="female" type="radio" name="gender" value="Female" required/>
+            <label for="male">Male</label><input id="male" type="radio" name="gender" value="Male"/>
+            <label for="others">Others</label><input id="others" type="radio"name="gender"  value="Other"/> <br />
+            <label for="skills">Skills</label> <br />
+            <input type="checkbox" value="HTML"><label>HTML</label> <br />
+            <input type="checkbox" value="CSS"><label>CSS</label><br />
+            <input type="checkbox" value="JavaScript"><label>JavaScript</label> <br />
+            <p>Choose one skill:</p>
+            <select required>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="react">React</option>
+                <option value="redux">Redux</option>
+                <option value="node">Node</option>
+            </select>
+            <br />
+            <label for="cv">Attach your cv here:</label>
+            <input id="cv" type="file" multiple required> <br />
+            <label>What is your favorite color:</label>
+            <input type="color" required> <br />
+            <label>Your Email:</label>
+            <input type="email" required> <br />
+            <label for="password">Password</label>
+            <input type="password" required /> <br />
+            <label for="message">Leave a message here:</label><br />
+            <textarea rows="10" cols="50" required></textarea> <br />
+            <input type="reset">
+            <!-- <button type="submit">Submit</button> -->
+            <input type="submit" value="Submit" />
+
+        </fieldset>
+       
+    </form>
+    
+</body>
+</html>
